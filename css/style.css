@@ -1,0 +1,235 @@
+/* --------------
+     General 
+----------------- */
+
+@font-face {
+    font-family: 'Moon Time Script';
+    src:  url('../fonts/MoonTime-Regular.ttf') format('truetype');
+  }
+
+:root {
+    --accent: #304528;
+    --second: #E6E4E2;
+    --third: #497537;
+    --sub: 'Moon Time Script';
+    --title: 'wedding-gothic-atf', sans-serif;;
+    --copy: 'Epilogue', sans-serif;
+	--default-shadow: rgba(0, 0, 0, 0.25);
+	--default-duration: 0.3s;
+}
+
+h1 {
+    font-family: var(--title);
+    font-weight: 700;
+    font-size: 5em;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: var(--title);
+    font-weight: 700;
+    font-size: 3.5em;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: var(--title);
+    font-weight: 700;
+    font-size: 2.5em;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: var(--sub);
+    font-weight: 500;
+    font-size: 1.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+h5 {
+    font-family: var(--sub);
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-family: var(--sub);
+    font-size: 5em;
+    margin-block-start: -1.5em;
+    margin-block-end: 0em;
+    font-weight: 100;
+    color: #B9AFC2;
+    z-index: 9999;
+}
+
+p {
+    font-family: var(--copy);
+    color: rgba(0, 0, 0, 0.60);
+    line-height: 1.5em;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* --------------
+     Navigation
+----------------- */
+
+ul.nav {
+    list-style-type: none;
+    display: flex;
+    font-family: var(--title);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .75em;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent);
+    width: 100%;
+}
+
+ul.nav img {
+    margin-right: 35px;
+}
+
+ul.nav li {
+    margin-right: 35px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    grid-area: Nav;
+    padding-top: 1em;
+}
+
+.headshot-container {
+    grid-area: Photo;
+}
+
+body {
+    background-color: var(--second);
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 0.25fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "Nav Photo"
+    "Intro Photo";
+}
+
+.intro-container {
+    grid-area: Intro;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: var(--title);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+button a {
+    color: var(--title);
+    text-decoration: none;
+}
+
+.round-img {
+    width: 320px;
+    height: 350px;
+    border-radius: 200px 200px 0px 0px;
+    margin: 0 25px;
+}
+
+.round-img.fam {
+    background: url(../images/family-cat.jpg);
+    background-position: 25% 50%;
+    background-size: cover;
+}
+
+.round-img.couple {
+    background: url(../images/couples-cat.jpg);
+    background-position: 30% 50%;
+    background-size: cover;
+}
+
+.round-img.individual {
+    background: url(../images/individuals-cat.jpg);
+    background-position: 50% 30%;
+    background-size: cover;
+}
+  
+.round-cont {
+    display: flex;
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.round-cont button {
+    text-align: center !important;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "Image Text"
+    "Image Text";
+    height: 100vh;
+    align-items: center;
+}
+
+.blog-img {
+    grid-area: Image;
+}
+
+.blog-img img {
+    width: 100%;
+}
+
+.blog-text {
+    width: 70%;
+    margin: 0 auto;
+    grid-area: Text;
+}
+
+h6.right {
+    text-align: right;
+    margin-right: -1em;
+}
+
+.cta {
+    width: 70%;
+    height: 300px;
+    margin: 0 auto;
+    background: url(../images/leaf-bg.jpg);
+}
+
+img.badge {
+    z-index: 9999;
+    position: absolute;
+    top: 380px;
+    right: 480px;
+}
