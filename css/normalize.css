@@ -362,12 +362,7 @@
       padding-inline-start: 0px;
   }
 
-  li {
-      text-align: center;
-      display: flex;
-  }
-
-  h2, h3 {
+  h2, h3, h4 {
     margin-block-start: 0em;
     margin-block-end: 0em;
   }
