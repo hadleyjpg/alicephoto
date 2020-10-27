@@ -3,3 +3,6 @@ https://api.instagram.com/oauth/authorize
   &redirect_uri=https://hadleyjpg.github.io/alicephoto/
   &scope=user_profile,user_media
   &response_type=code
+
+
+  var = 2;
