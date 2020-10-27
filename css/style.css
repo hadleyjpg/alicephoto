@@ -33,6 +33,7 @@ h2 {
     font-size: 3.5em;
     color: var(--accent);
     text-transform: uppercase;
+    line-height: 1em;
 }
 
 h3 {
@@ -41,6 +42,7 @@ h3 {
     font-size: 2.5em;
     color: var(--accent);
     text-transform: uppercase;
+    line-height: 1em;
 }
 
 h4 {
@@ -146,7 +148,7 @@ nav {
     color: var(--accent);
     width: 80%;
     margin: 0 auto;
-    padding-top: 1.25em;
+    padding: 1.25em 0;
 }
 
 .reg-nav {
@@ -242,8 +244,15 @@ body {
     grid-template-areas:
     "Image Text"
     "Image Text";
-    height: 100vh;
     align-items: center;
+}
+
+.blog-container.right {
+    direction: rtl;
+}
+
+.blog-container.home {
+    height: 100vh;
 }
 
 .blog-img {
@@ -367,6 +376,50 @@ footer {
     align-items: center;
 }
 
+.contact-container {
+    width: 70%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    padding: 10% 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "Filter Photo-1 Photo-2 Photo-3"
+      "Filter Photo-4 Photo-5 Photo-6"
+      "Filter Photo-7 Photo-8 Photo-9";
+  }
+  .Filter { 
+      grid-area: Filter;
+      /* transform: rotate(90deg); */
+    }
+  .Photo-1 { grid-area: Photo-1; }
+  .Photo-2 { grid-area: Photo-2; }
+  .Photo-3 { grid-area: Photo-3; }
+  .Photo-4 { grid-area: Photo-4; }
+  .Photo-5 { grid-area: Photo-5; }
+  .Photo-6 { grid-area: Photo-6; }
+  .Photo-7 { grid-area: Photo-7; }
+  .Photo-8 { grid-area: Photo-8; }
+  .Photo-9 { grid-area: Photo-9; }
+
+  .Photo-1, .Photo-2, .Photo-3, .Photo-4, .Photo-5, .Photo-6, .Photo-7, .Photo-8, .Photo-9 {
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+  }
+
+  .Photo-1 img, .Photo-2 img, .Photo-3 img, .Photo-4 img, .Photo-5 img, .Photo-6 img, .Photo-7 img, .Photo-8 img, .Photo-9 img {
+    height: 400px;
+}
+
+
+
 /* --------------
      Button
 ----------------- */
@@ -433,4 +486,49 @@ img.badge {
 .footer-content p {
     color: var(--second);
     font-size: 13px;
+}
+
+
+/* --------------
+      Forms 
+----------------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+} 
+
+input {
+    /* flex: 1 1 5ch; */
+    margin: .75em 0;
+    width: 100%;
+    /* min-height: 2em; */
+    padding: 1em;
+    background-color: transparent;
+}
+
+textarea {
+    flex: 3 1 10ch;
+    margin: .75em 0;
+    width: 100%;
+    padding: 1em;
+    background-color: transparent;
+}
+
+input,
+textarea,
+select {
+    border: 1.5px solid var(--fourth);
+}
+
+  textarea {
+    min-height: 6em;
+  }
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1.5px solid var(--third);
+    outline: none;
 }
