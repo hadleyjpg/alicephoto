@@ -23,41 +23,138 @@
             </ul>
         </nav>
     </div>
-    <div class="portfolio-filter">
-        <div class="Filter">
-            <button class="filter-btn" data-filter = "all">All</button>
-            <button class="filter-btn" data-filter = "couples">Couples</button>
-            <button class="filter-btn" data-filter = "families">Families</button>
-            <button class="filter-btn" data-filter = "individuals">Individuals</button>
-        </div>
-        <div class="Photo-1">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-2">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-3">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-4">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-5">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-6">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-7">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-8">
-            <img src="images/blog-header2.jpg">
-        </div>
-        <div class="Photo-9">
-            <img src="images/blog-header2.jpg">
-        </div>
+    <!-- Images used to open the lightbox -->
+<div class="portfolio-row">
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-2-4-web.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-2-web.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-3-3-web.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-1-2-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-3-2-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-3-5-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-3-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-4-2-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-5-3-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-5-4-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-5-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="images/portfolio/AJPhoto-6-3-web.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+  </div>
+  
+  <!-- The Modal/Lightbox -->
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/portfolio/AJPhoto-2-4-web.jpg">
       </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/portfolio/AJPhoto-2-web.jpg">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/portfolio/AJPhoto-3-3-web.jpg">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/portfolio/AJPhoto-1-2-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 4</div>
+        <img src="images/portfolio/AJPhoto-3-2-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 4</div>
+        <img src="images/portfolio/AJPhoto-3-5-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">7 / 4</div>
+        <img src="images/portfolio/AJPhoto-3-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">8 / 4</div>
+        <img src="images/portfolio/AJPhoto-4-2-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">9 / 4</div>
+        <img src="images/portfolio/AJPhoto-5-3-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">10 / 4</div>
+        <img src="images/portfolio/AJPhoto-5-4-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">11 / 4</div>
+        <img src="images/portfolio/AJPhoto-5-web.jpg">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">12 / 4</div>
+        <img src="images/portfolio/AJPhoto-6-3-web.jpg">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <!-- Caption text 
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div> -->
+  
+      <!-- Thumbnail image controls 
+      <div class="column">
+        <img class="demo" src="images/portfolio/port1-prev.jpg" onclick="currentSlide(1)" alt="Nature">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/portfolio/port2-prev.jpg" onclick="currentSlide(2)" alt="Snow">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/portfolio/port3-prev.jpg" onclick="currentSlide(3)" alt="Mountains">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/portfolio/port4-prev.jpg" onclick="currentSlide(4)" alt="Lights">
+      </div> -->
+    </div>
+  </div>
 
     <footer>
         <div class="footer-main">
@@ -77,4 +174,7 @@
             <a href="https://www.instagram.com/alicejoanphotography/" target="blank"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"/></svg></a>
         </div>
     </footer>
+
+<script type="text/javascript" src="javascript/script.js"></script>
 </body>
+</html>
