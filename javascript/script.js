@@ -94,3 +94,82 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+
+
+
+/**
+ * 
+ * Countdown
+ *  
+ */
+
+const finaleDate = new Date("March 19, 2022 00:00:00").getTime();
+
+const timer = () =>{
+    const now = new Date().getTime();
+    let diff = finaleDate - now;
+    if(diff < 0){
+        document.querySelector('.alert').style.display = 'block';
+        document.querySelector('.container').style.display = 'none';
+    }
+
+    let days = Math.floor(diff / (1000*60*60*24));
+    let hours = Math.floor(diff % (1000*60*60*24) / (1000*60*60));
+    let minutes = Math.floor(diff % (1000*60*60)/ (1000*60));
+    let seconds = Math.floor(diff % (1000*60) / 1000);
+
+    days <= 99 ? days = `0${days}` : days;
+    days <= 9 ? days = `00${days}` : days;
+    hours <= 9 ? hours = `0${hours}` : hours;
+    minutes <= 9 ? minutes = `0${minutes}` : minutes;
+    seconds <= 9 ? seconds = `0${seconds}` : seconds;   
+
+    document.querySelector('#days').textContent = days;
+    document.querySelector('#hours').textContent = hours;
+    document.querySelector('#minutes').textContent = minutes;
+    document.querySelector('#seconds').textContent = seconds;
+
+}
+timer();
+setInterval(timer,1000);
+
+
+
+
+
+
+/**
+ * 
+ * Post Data
+ *  
+ */
+
+function checkStatus(response) {
+  if (response.ok) {
+    return Promise.resolve(response);
+  } else {
+    return Promise.reject(new Error(response.statusText));
+  }
+} 
+
+form.addEventListener('submit', postData); 
+
+function postData(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const mail = document.getElementById('mail').value;
+    const message = document.getElementById('message').value;
+
+    fetch('https://jsonplaceholder.typicode.com/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, phone, mail, message })
+    })
+      .then(checkStatus)
+      .then(res => res.json())
+      .then(data => console.log(data))
+} 

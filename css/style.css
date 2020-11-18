@@ -269,6 +269,18 @@ body {
     grid-area: Text;
 }
 
+.countdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 15vh auto;
+}
+
+.box {
+    text-align: center;
+}
+
 .cta-container {
     display: flex;
     align-items: center;
@@ -381,7 +393,9 @@ footer {
     margin: 0 auto;
     height: 100vh;
     display: flex;
-    padding: 10% 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 0;
 }
 
 .grid-container {
@@ -497,7 +511,17 @@ form {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 500px;
 } 
+
+form button {
+    text-align: center;
+    margin-top: 15px;
+}
+
+form button:hover {
+    cursor: pointer;
+}
 
 input {
     /* flex: 1 1 5ch; */
@@ -509,7 +533,6 @@ input {
 }
 
 textarea {
-    flex: 3 1 10ch;
     margin: .75em 0;
     width: 100%;
     padding: 1em;
@@ -553,10 +576,6 @@ select:focus {
     content: "";
     display: table;
     clear: both;
-}
-
-/* Create four equal columns that floats next to eachother */
-.column {
 }
 
 .column img {
