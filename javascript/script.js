@@ -1,12 +1,14 @@
-const nameInput = document.getElementById("#name");
-const phoneInput = document.getElementById("#phone");
-const emailInput = document.getElementById("#mail");
+/* require('dotenv').config(); */
+
+const nameInput = document.getElementById("name");
+const phoneInput = document.getElementById("phone");
+const emailInput = document.getElementById("mail");
 
 /**
  * 
  * VALIDATORS
  *  
- 
+ */
 
 // The telephone number must be in the format of (555) 555-5555
 function isValidTelephone(phone) {
@@ -22,7 +24,7 @@ return /^[^@]+@[^@.]+\.[a-z]+$/i.test(mail);
  * 
  * FORMATTING FUNCTIONS
  * 
- 
+ */
 
 function formatTelephone(text) {
     const expression = /^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$/;
@@ -52,7 +54,7 @@ emailInput.addEventListener("input", createListener(isValidEmail));
  * 
  * Lightbox Gallery
  *  
- 
+ */
 
 // Open the Modal
 function openModal() {
@@ -102,7 +104,7 @@ function showSlides(n) {
  * 
  * Countdown
  *  
- 
+ */
 
 const finaleDate = new Date("March 19, 2022 12:30:00").getTime();
 
@@ -178,31 +180,3 @@ const message = document.getElementById('message');
 
   newLink.click(); 
 }
-
-
-
-
-
-
-
-/**
- * 
- * INSTAGRAM
- *  
- 
-
-const instaContainer = document.querySelector('.insta-container'); 
-
-fetch('https://graph.instagram.com/me/media?fields=media_url&access_token=IGQVJWUDNMVjZA4anNzNmZAPUm5oUm5RNWNGSndmdlhLNHRvRmRLa1R3OW1zSEtRWHlaUEVqWGdveVl6VUV2aTVYM2E3SXZAVU1VIeENFSE9TUlh4ZA2VLdWJwcU1iOHNrTmFPRW5vVXZA3')
-  .then(response => response.json())
-  .then(data => generateImage(data.media_url))
-
-  function generateImage(data) {
-      const html = `
-        <img src="${data}" width="200px" height="200px">
-      `;
-      instaContainer.innerHtml = html;
-  } */
-
-
- 
