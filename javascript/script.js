@@ -1,12 +1,12 @@
-const nameInput = document.getElementById("name");
-const phoneInput = document.getElementById("phone");
-const emailInput = document.getElementById("mail");
+const nameInput = document.getElementById("#name");
+const phoneInput = document.getElementById("#phone");
+const emailInput = document.getElementById("#mail");
 
 /**
  * 
  * VALIDATORS
  *  
- */
+ 
 
 // The telephone number must be in the format of (555) 555-5555
 function isValidTelephone(phone) {
@@ -22,7 +22,7 @@ return /^[^@]+@[^@.]+\.[a-z]+$/i.test(mail);
  * 
  * FORMATTING FUNCTIONS
  * 
- */
+ 
 
 function formatTelephone(text) {
     const expression = /^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$/;
@@ -37,7 +37,7 @@ return e => {
     const tooltip = e.target.nextElementSibling;
     showOrHideTip(showTip, tooltip);
 };
-}
+};
 
 phoneInput.addEventListener("input", createListener(isValidTelephone));
 
@@ -52,7 +52,7 @@ emailInput.addEventListener("input", createListener(isValidEmail));
  * 
  * Lightbox Gallery
  *  
- */
+ 
 
 // Open the Modal
 function openModal() {
@@ -102,16 +102,16 @@ function showSlides(n) {
  * 
  * Countdown
  *  
- */
+ 
 
-const finaleDate = new Date("March 19, 2022 00:00:00").getTime();
+const finaleDate = new Date("March 19, 2022 12:30:00").getTime();
 
 const timer = () =>{
     const now = new Date().getTime();
     let diff = finaleDate - now;
     if(diff < 0){
         document.querySelector('.alert').style.display = 'block';
-        document.querySelector('.container').style.display = 'none';
+        document.querySelector('.countdown-container').style.display = 'none';
     }
 
     let days = Math.floor(diff / (1000*60*60*24));
@@ -141,35 +141,68 @@ setInterval(timer,1000);
 
 /**
  * 
- * Post Data
+ * Form to TXT
  *  
  */
 
-function checkStatus(response) {
-  if (response.ok) {
-    return Promise.resolve(response);
-  } else {
-    return Promise.reject(new Error(response.statusText));
+let saveFile = () => {
+    	
+  // Get the data from each element on the form.
+const name = document.getElementById('name');
+const phone = document.getElementById('phone');
+const mail = document.getElementById('mail');
+const message = document.getElementById('message');
+  
+  // This variable stores all the data.
+  let data = 
+      '\r Name: ' + name.value + ' \r\n ' + 
+      'Phone: ' +phone.value + ' \r\n ' + 
+      'Email: ' + mail.value + ' \r\n ' +  
+      'Message: ' + message.value;
+  
+  // Convert the text to BLOB.
+  const textToBLOB = new Blob([data], { type: 'text/plain' });
+  const sFileName = 'formData.txt';	   // The file to save the data.
+
+  let newLink = document.createElement("a");
+  newLink.download = sFileName;
+
+  if (window.webkitURL != null) {
+      newLink.href = window.webkitURL.createObjectURL(textToBLOB);
   }
-} 
+  else {
+      newLink.href = window.URL.createObjectURL(textToBLOB);
+      newLink.style.display = "none";
+      document.body.appendChild(newLink);
+  }
 
-form.addEventListener('submit', postData); 
+  newLink.click(); 
+}
 
-function postData(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const mail = document.getElementById('mail').value;
-    const message = document.getElementById('message').value;
 
-    fetch('https://jsonplaceholder.typicode.com/comments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name, phone, mail, message })
-    })
-      .then(checkStatus)
-      .then(res => res.json())
-      .then(data => console.log(data))
-} 
+
+
+
+
+
+/**
+ * 
+ * INSTAGRAM
+ *  
+ 
+
+const instaContainer = document.querySelector('.insta-container'); 
+
+fetch('https://graph.instagram.com/me/media?fields=media_url&access_token=IGQVJWUDNMVjZA4anNzNmZAPUm5oUm5RNWNGSndmdlhLNHRvRmRLa1R3OW1zSEtRWHlaUEVqWGdveVl6VUV2aTVYM2E3SXZAVU1VIeENFSE9TUlh4ZA2VLdWJwcU1iOHNrTmFPRW5vVXZA3')
+  .then(response => response.json())
+  .then(data => generateImage(data.media_url))
+
+  function generateImage(data) {
+      const html = `
+        <img src="${data}" width="200px" height="200px">
+      `;
+      instaContainer.innerHtml = html;
+  } */
+
+
+ 
