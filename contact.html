@@ -11,25 +11,33 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
-        <nav>
-            <a href="index.html"><img src="images/logo.jpg" height="60px"></a>
-            <ul>
-                <!-- <li><a href="about.html">About</a></li> -->
-                <li><a href="work.html">Work</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="investment.html">Investment</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+    <header>
+        <a href="index.html"><img src="https://hadleyjpg.github.io/alicephoto/images/logo.jpg" height="60px"></a>
+        <button class="hamburger" id="hamburger">
+            <?xml version="1.0" ?><svg enable-background="new 0 0 512 512" height="45px" width="45px" id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><circle cx="256" cy="159.9" fill="none" r="22.1" stroke="var(--second)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10"/><circle cx="256" cy="245.3" fill="none" r="22.1" stroke="var(--second)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10"/><circle cx="256" cy="330.6" fill="none" r="22.1" stroke="var(--second)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10"/></g></svg>
+        </button>
+        <ul class="nav" id="nav">
+            <li>
+                <a href="work.html">Work</a>
+            </li>
+            <li>
+                <a href="blog.html">Blog</a>
+            </li>
+            <li>
+                <a href="investment.html">Investment</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </header>
     <div class="contact-container">
         <!-- <div class="contact-text"> -->
             <h3>Contact Alice</h3>
             <p>Description about contact form.</p>
         <!-- </div>
         <div class="contact-form"> -->
-            <form action="index.html" method="post">
+            <form method="post">
                 <input type="text" id="name" name="user_name" placeholder="Name">
 
                 <input type="text" id="phone" name="user_phone" placeholder="Phone">
@@ -37,13 +45,6 @@
                 <input type="email" id="mail" name="user_email" placeholder="Email">
 
                 <textarea id="message" name="user_message" placeholder="Message"></textarea>
-
-                <!-- <label for="heard">How did you hear about me?</label>
-                <select id="heard" name="user_heard">
-                    <option value="social_media">Social Media</option>
-                    <option value="a_friend">A Friend</option>
-                    <option value="other">Other</option>
-                </select> -->
 
                 <button type="submit" onclick="saveFile()">Send</button>
 
@@ -71,4 +72,5 @@
     </footer>
 
 <script type="text/javascript" src="javascript/script.js"></script>
+<script type="text/javascript" src="javascript/contact.js"></script>
 </body>
