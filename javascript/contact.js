@@ -31,7 +31,7 @@ return e => {
     const valid = validator(text);
     const showTip = text !== "" && !valid;
     const tooltip = e.target.nextElementSibling;
-    showOrHideTip(showTip, tooltip);
+    /*showOrHideTip(showTip, tooltip);*/
 };
 };
 
