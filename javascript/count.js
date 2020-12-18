@@ -2,7 +2,7 @@
  * 
  * Countdown
  *  
- */
+
 
 const finaleDate = new Date("March 19, 2022 12:30:00").getTime();
 
@@ -32,4 +32,6 @@ const timer = () =>{
 
 }
 timer();
-setInterval(timer,1000);
+setInterval(timer,1000);  */
+
+

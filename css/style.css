@@ -280,10 +280,6 @@ main {
     .nav-container {
         display: none;
     }
-
-    .box.hours, .box.minutes, .box.seconds {
-        display: none;
-    }
 }
 
 @media (max-width: 1159px) {
@@ -344,12 +340,18 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
 }
 
 .body-container {
     margin-top: 40px;
 }
+
+@media (min-width: 1000px) {
+
+    .blog-container {
+        margin-top: 0px;
+    }
+}    
 
 @media (max-width: 999px) {
 
@@ -361,6 +363,10 @@ main {
     .round-img {
         width: 220px;
         height: 250px;
+    }
+
+    .blog-container {
+        margin-top: 40px;
     }
 }    
 
@@ -422,7 +428,7 @@ main {
 .round-cont {
     display: flex;
     width: 70%;
-    margin: 0 auto;
+    margin: 40px auto;
     align-items: center;
     justify-content: space-around;
     text-align: center;
@@ -438,26 +444,20 @@ main {
 
 .blog-img {
     grid-area: Image;
+    width: 100%;
+    height: 100%;
 }
 
 .blog-img img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;    
 }
 
-.countdown-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 70%;
-    margin: 20px auto;
-}
-
-.box {
-    text-align: center;
-    border: 1.5px solid black;
-    padding: 30px;
-    min-width: 150px;
-    margin: 0 10px;
+.blog-img.home {
+    object-fit: none;
+    width: 100%;
+    height: 450px;
 }
 
 .cta-container {
@@ -541,11 +541,34 @@ footer {
 
     .Text {
         grid-area: Text;
+        margin: 0;
     }
 
-    .container {
+    .quote-container {
         height: 70vh;
         width: 70%;
+    }
+
+    .purple-linear {
+        background: linear-gradient(180deg, var(--second) 80%, var(--fourth) 20%);
+    }
+
+    .about-container {
+        width: 80%;
+        margin: 0px auto;
+        padding-top: 40px;
+        display: flex;
+    }
+
+    .about-container div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 30px;
+    }
+
+    .about-container img {
+        height: 500px;
     }
 }
 
@@ -557,6 +580,7 @@ footer {
     .Text h3 {
         font-size: 2em;
         text-align: center;
+        margin: 0 auto;
     }
 
     .price-container {
@@ -629,7 +653,6 @@ footer {
 
 .Text {
     width: 80%;
-    margin: 0 auto;
 }
 
 .grid-container {
@@ -666,11 +689,6 @@ footer {
     height: 400px;
 }
 
-.countdown-text {
-    text-align: center;
-    margin-top: 40px;
-}
-
 
 #instafeed {
     display: flex;
@@ -688,6 +706,34 @@ footer {
     object-fit: cover;
     width: 350px;
     height: 350px;
+}
+
+@media (max-width: 1001px) {
+    .nav-container {
+        display: none;
+    }
+}
+
+.countdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 0px auto;
+    padding: 60px 0;
+}
+
+.box {
+    text-align: center;
+    border: 1.5px solid black;
+    padding: 30px;
+    min-width: 200px;
+    margin: 0 10px;
+}
+
+.purple {
+    background-color: var(--fourth);
+    padding: 30px 0;
 }
 
 
