@@ -547,6 +547,10 @@ footer {
     .quote-container {
         height: 70vh;
         width: 70%;
+        height: 50vh;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
     }
 
     .purple-linear {
