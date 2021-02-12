@@ -1,7 +1,3 @@
-const nameInput = document.getElementById("name");
-const phoneInput = document.getElementById("phone");
-const emailInput = document.getElementById("mail");
-
 /**
  * 
  * VALIDATORS
